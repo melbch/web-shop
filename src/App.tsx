@@ -20,11 +20,11 @@ function App() {
   return (
     <ProductProvider>
       <CartProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/web-shop/">
           <ScrollToTop />
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/product/list" element={<ProductList />} />
             <Route path="/shop" element={<ProductList />} />

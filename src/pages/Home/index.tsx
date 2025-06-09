@@ -11,7 +11,6 @@ import TestimonialsSlider from './components/Testimonials/TestimonialsSlider';
 import JoinTheFamily from '../../components/JoinTheFamily';
 
 const Home: React.FC = () => {
-    
     return (
         <div>
             <HeroSection />
