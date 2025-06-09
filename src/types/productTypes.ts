@@ -3,10 +3,10 @@ export interface Product {
     title: string;
     author: string;
     publishedDate: string;
-    genre: string[];
+    genre: string | string[];
     price: number;
     onSale: boolean,
-    salePrice: number,
+    salePrice?: number,
     shortDescription: string;
     description: string;
     image: string;

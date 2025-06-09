@@ -4,7 +4,7 @@ import { useFilteredProducts } from "./hooks/useFilteredProducts";
 import { useUrlFilters } from "./hooks/useUrlFilters";
 import type { Filters } from "../../../../types/filterTypes";
 import { useScrollPosition } from "./hooks/useScrollPosition";
-import { useFetchProducts } from "./hooks/useFetchProducts";
+import { useProductsData } from "./hooks/useProductsData";
 import { useUniqueGenres } from "./hooks/useUniqueGenres";
 import { useUniqueAuthors } from "./hooks/useUniqueAuthors";
 import { FilterSidebarDrawer } from "./FilterSidebarDrawer";
@@ -33,7 +33,7 @@ const ProductList = () => {
     const theme = useTheme();
     const listRef = useRef<HTMLDivElement>(null);
 
-    const { products, loading } = useFetchProducts();
+    const { products, loading } = useProductsData();
 
     useUrlFilters(setFilters);
     const filteredProducts = useFilteredProducts(products, filters);

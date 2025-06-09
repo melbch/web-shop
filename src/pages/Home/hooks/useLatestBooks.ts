@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Product } from "../../../types/productTypes";
+import booksData from "../../../data/books";
 
 const useBooks = (limit = 4) => {
     const [books, setBooks] = useState<Product[]>([]);
@@ -7,14 +8,11 @@ const useBooks = (limit = 4) => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchBooks = async () => {
-            try {
+        try {
                 setLoading(true);
-                const response = await fetch('http://localhost:5000/books');
-                if (!response.ok) throw new Error("Failed to fetch books");
-                const data: Product[] = await response.json();
-                
-                const filteredBooks = data.filter(book => book.availability !== 'pre_order');
+                setError(null);
+
+                const filteredBooks = booksData.filter(book => book.availability !== 'pre_order');
                 
                 const sortedBooks = filteredBooks
                     .sort(
@@ -25,13 +23,11 @@ const useBooks = (limit = 4) => {
                     .slice(0, limit); 
                 setBooks(sortedBooks);
             } catch (err) {
-                setError((err as Error).message);
+                if (err instanceof Error) setError(err.message);
+                else setError(String(err));
             } finally {
                 setLoading(false);
             }
-        };
-
-        fetchBooks();
     }, [limit]);
 
     return { books, loading, error };

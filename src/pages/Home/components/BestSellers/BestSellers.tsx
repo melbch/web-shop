@@ -2,21 +2,20 @@ import { useState} from "react";
 import type { Product } from "../../../../types/productTypes";
 import BookCard from "../BookCard";
 import useResponsiveBooksPerSlide from "../../hooks/useResponsiveBooksPerSlide";
-import useFetchBooks from "../../hooks/useFetchTopRatedBooks";
 import SlideDots from "../SlideDots";
 import BestSellersInfo from "./BestSellersInfo";
 
+import books from "../../../../data/books";
+
 const BestSellers = () => {
     const { booksPerSlide, maxBooks } = useResponsiveBooksPerSlide();
-    const { books, loading, error } = useFetchBooks(maxBooks);
     const [slideIndex, setSlideIndex] = useState(0);
 
-    if (loading) return <div role="status" className="text-center py-10">Loading bestsellers...</div>;
-    if (error) return <div role="alert" className="text-center py-10 text-red-600">Error: {error}</div>;
+    const limitedBooks = books.slice(0, maxBooks);
 
-    const maxSlide = Math.floor((books.length - 1) / booksPerSlide);
+    const maxSlide = Math.floor((limitedBooks.length - 1) / booksPerSlide);
     const start = slideIndex * booksPerSlide;
-    const visibleBooks = books.slice(start, start + booksPerSlide);
+    const visibleBooks = limitedBooks.slice(start, start + booksPerSlide);
 
     return (
         <section className="px-6 py-10 mt-20">

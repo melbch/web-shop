@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import type { Product } from "../../../../types/productTypes";
 import type { Review } from "../ProductReviews";
 
+import books from "../../../../data/books";
+import publishersData from "../../../../data/publishers";
+import reviewsData from "../../../../data/reviews";
+
 interface UseProductDetailResult {
     product: Product | null;
     publishers: { id: number; name: string }[];
@@ -18,37 +22,28 @@ export const useProductDetail = (id: string | undefined): UseProductDetailResult
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchAllData = async () => {
-            setLoading(true);
-            try {
-                const [productResponse, publishersResponse, reviewsResponse] = await Promise.all([
-                    fetch(`http://localhost:5000/books/${id}`),
-                    fetch(`http://localhost:5000/publishers`),
-                    fetch(`http://localhost:5000/reviews`),
-                ]);
-
-                const productData = await productResponse.json();
-                const publishersData = await publishersResponse.json();
-                const allReviews = await reviewsResponse.json();
-
-                setProduct(productData);
-                setPublishers(publishersData);
-
-                const shuffled = [...allReviews].sort(() => 0.5 - Math.random());
-                const randomCount = Math.floor(Math.random() * 4) + 2;
-                const selected = shuffled.slice(0, randomCount);
-                setReviews(selected);
-
-            } catch (error) {
-                console.error("Error fetching product details:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        if (id) {
-            fetchAllData();
+       if (!id) {
+            setLoading(false);
+            return;
         }
+            
+        setLoading(true);
+            
+        setTimeout(() => {
+            const foundBook = books.find(book => book.id.toString() === id);
+            const productData = foundBook !== undefined ? foundBook : null;
+            setProduct(productData);
+
+            setPublishers(publishersData);
+
+            const shuffled = [...reviewsData].sort(() => 0.5 - Math.random());
+            const randomCount = Math.floor(Math.random() * 4) + 2;
+            const selected = shuffled.slice(0, randomCount);
+            setReviews(selected);
+
+            setLoading(false);
+        }, 300);
+
     }, [id]);
 
     const addReview = (newReview: Review) => {
