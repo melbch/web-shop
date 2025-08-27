@@ -47,7 +47,7 @@ const Membership: React.FC = () => {
                     </p>
                 </div>
                 <div className="md:w-1/2 flex justify-center items-center">
-                  <img src="/images/join-us-golden-teal.png" alt="Illustration inviting to join The BookNook Club" className="w-full max-w-xs" />
+                  <img src="/web-shop/images/join-us-golden-teal.png" alt="Illustration inviting to join The BookNook Club" className="w-full max-w-xs" />
                 </div>
             </section>
 

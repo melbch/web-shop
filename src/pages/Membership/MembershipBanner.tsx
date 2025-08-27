@@ -7,7 +7,7 @@ const MembershipBanner = () => {
                 {/* Left section */}
                 <div className="hidden md:block absolute top-1/2 transform -translate-y-1/2 -mt-2.5 h-32 w-auto object-contain">
                     <img 
-                        src="/images/colorful-open-book.png"
+                        src="/web-shop/images/colorful-open-book.png"
                         alt="Illustration of a colorful open book"
                         className="w-36 h-36 object-contain"
                     />

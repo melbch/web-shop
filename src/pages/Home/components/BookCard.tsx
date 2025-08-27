@@ -8,7 +8,7 @@ type BookCardProps = {
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
     return (
-       <div className="border rounded p-4 shadow-sm flex flex-col">
+       <div className="border bg-white rounded p-4 shadow-sm flex flex-col">
             <div className="relative p-2 bg-white rounded-lg shadow-lg mb-3">
                 <img
                     src={book.image}

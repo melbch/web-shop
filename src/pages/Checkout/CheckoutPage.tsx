@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCartUtils } from '../../hooks/useCartUtils';
 import CartItemRow from "../../components/Cart/CartItemRow";
 import type { CartItem } from "../../types/cartTypes";
@@ -50,6 +51,8 @@ const CheckoutPage = () => {
         setOrderPlaced(true);
     };
 
+    const navigate = useNavigate();
+
     if (orderPlaced) {
         return (
             <div className="max-w-2xl mx-auto px-6 py-16 mt-20 mb-20 text-center bg-white shadow-md rounded">
@@ -80,7 +83,7 @@ const CheckoutPage = () => {
                 </p>
 
                 <button
-                    onClick={() => window.location.href = '/'}
+                    onClick={() => navigate('/')}
                     className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
                 >
                     Continue Browsing

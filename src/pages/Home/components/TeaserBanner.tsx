@@ -5,7 +5,7 @@ const TeaserBanner = () => {
                 {/* Left section */}
                 <div className="order-2 sm:order-3 md:order-1 flex justify-center md:justify-start w-full sm:w-auto md:w-[192px] mt-0 sm:mt-0">
                     <img
-                        src="/images/coming-soon-teal.png"
+                        src="/web-shop/images/coming-soon-teal.png"
                         alt="The Words 'Coming Soon' with a teal-colored background and asymetrical borders"
                         className="w-[9rem] h-[9rem] sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain m-0"
                     />
@@ -24,7 +24,7 @@ const TeaserBanner = () => {
                 {/* Right image */}
                 <div className="hidden md:flex order-3 md:order-3 items-center justify-end md:w-auto">
                     <img
-                        src="/images/stacked-books.png"
+                        src="/web-shop/images/stacked-books.png"
                         alt="Colorful illustration of a stack of books"
                         className="w-36 h-auto"
                     />

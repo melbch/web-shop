@@ -15,7 +15,7 @@ const About: React.FC = () => {
                         style={{ maxWidth: '100%', flexShrink: 1, overflow: 'visible' }}
                     >
                         <img 
-                            src="/images/bookstore.jpg"
+                            src="/web-shop/images/bookstore.jpg"
                             alt="image depicting the interior of a brightly lit bookstore"
                             className="  
                                 block
@@ -31,7 +31,7 @@ const About: React.FC = () => {
                             "
                         />
                         <img 
-                            src="/images/girl-carrying-books-smile.jpg"
+                            src="/web-shop/images/girl-carrying-books-smile.jpg"
                             alt="woman looking through a bookshelf where the books have been placed in a circle"
                             className="
                                 block
@@ -95,7 +95,7 @@ const About: React.FC = () => {
 
             <section
                 className="relative bg-cover bg-center text-white py-24 px-6 mt-10"
-                style={{ backgroundImage: "url('/images/woman-grabbing-book.jpg')" }}
+                style={{ backgroundImage: "url('/web-shop/images/woman-grabbing-book.jpg')" }}
             >
                 <div className="bg-black bg-opacity-50 p-10 rounded max-w-xl mx-auto text-center">
                     <h2 className="text-4xl font-bold mb-4">New Customers Get 40% Off!</h2>
