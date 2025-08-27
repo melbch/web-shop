@@ -80,7 +80,7 @@ const CheckoutPage = () => {
                 </p>
 
                 <button
-                    onClick={() => window.location.href = '/web-shop/'}
+                    onClick={() => navigate('/')}
                     className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
                 >
                     Continue Browsing
