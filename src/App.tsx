@@ -20,7 +20,7 @@ function App() {
   return (
     <ProductProvider>
       <CartProvider>
-        <BrowserRouter basename="/web-shop/">
+        <BrowserRouter basename="/web-shop">
           <ScrollToTop />
           <Navbar />
           <Routes>
