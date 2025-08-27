@@ -78,7 +78,7 @@ const CheckoutPage = () => {
                 </h2>
 
                 <p className="text-gray-600 mb-6">
-                    We've recieved your order and will process it shortly.
+                    We've received your order and will process it shortly.
                     A confirmation has been sent to <span className="font-medium">{email}</span>.
                 </p>
 
