@@ -75,12 +75,12 @@ const CheckoutPage = () => {
                 </h2>
 
                 <p className="text-gray-600 mb-6">
-                    We've recieved your order and will process it shortly.
+                    We've received your order and will process it shortly.
                     A confirmation has been sent to <span className="font-medium">{email}</span>.
                 </p>
 
                 <button
-                    onClick={() => window.location.href = '/'}
+                    onClick={() => window.location.href = '/web-shop/'}
                     className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
                 >
                     Continue Browsing
